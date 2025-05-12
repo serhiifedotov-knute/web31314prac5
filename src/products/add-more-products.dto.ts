@@ -1,14 +1,18 @@
-import { IsInt, IsOptional, IsString } from "class-validator";
+import { ApiProperty } from '@nestjs/swagger';
+import { IsInt, IsOptional, IsString } from 'class-validator';
 
 // Schema
-export class AddMoreProductsDto{
-    @IsInt()
-    count:number;
+export class AddMoreProductsDto {
+  @IsInt()
+  @ApiProperty()
+  count: number;
 
-    @IsInt()
-    @IsOptional()
-    price?:number;
+  @IsInt()
+  @IsOptional()
+  @ApiProperty({ required: false })
+  price?: number;
 
-    @IsString()
-    name:string;
+  @IsString()
+  @ApiProperty()
+  name: string;
 }
