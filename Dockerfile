@@ -4,8 +4,6 @@ WORKDIR /usr/app
 
 COPY . .
 
-RUN npm install && npm run build
-
 EXPOSE 8080
 
-CMD ["yarn","start:dev"]
+CMD ["yarn","start"]
