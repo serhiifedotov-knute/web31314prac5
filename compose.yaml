@@ -1,0 +1,11 @@
+services:
+  lec5:
+    build: .
+    image: lec5 
+    ports:
+      - "8080:8080"
+  lec6:
+    build: .
+    image: lec5 
+    ports:
+      - "8081:8080"
