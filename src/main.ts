@@ -5,7 +5,10 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 // yarn start:dev = yarn watch + yarn start at the time
 async function bootstrap() {
-  const port = 8080;
+  const port = process.env.PORT ?? 8080;
+  if(process.env.NODE_ENV == 'production'){
+      console.log(`production`);
+  }
 
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
